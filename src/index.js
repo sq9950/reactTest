@@ -15,6 +15,8 @@ import App from './router/index'
 import { Provider } from 'react-redux';
 
 import store from './store'
+
+
 render(
 	<Provider store={store}>
      <BrowserRouter>

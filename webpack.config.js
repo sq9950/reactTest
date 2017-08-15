@@ -20,6 +20,26 @@ module.exports = {
             presets: ['env']
           }
         }
+      },
+      {
+        test: /\.(png|jpg|gif)$/,
+        use:[{
+          loader: "url-loader?limit=1000"
+        }]
+      },
+      {
+        test: /\.(eot|svg|ttf|woff|woff2)\w*/,
+        use: [{
+          loader: "file-loader"
+        }]
+      },
+      {
+        test: /\.css$/,
+        use: [
+          'style-loader',
+          'css-loader',
+          'less-loader'
+        ]
       }
     ]
   },
