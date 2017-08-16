@@ -5,8 +5,8 @@
   "main": "webpack.config.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "webpack-dev-server",
-    "build": "rm -rf dist/ && webpack --config webpack.config.prod.js --progress --colors --optimize-minimize"
+    "start": "./node_modules/.bin/webpack-dev-server",
+    "build": "rm -rf dist/ && ./node_modules/.bin/webpack --config webpack.config.prod.js --progress --colors --optimize-minimize"
   },
   "author": "",
   "license": "ISC",
