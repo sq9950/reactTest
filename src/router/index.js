@@ -1,15 +1,19 @@
 import React, { Component } from 'react'
-import {Link, Route} from "react-router-dom";
+import {Link, Route, Redirect, Switch} from "react-router-dom";
+
+
+// import Bundle from '../components/Bundle/bundle'
 import {DialogLayout} from '../components/Dialog'
-import Home2 from './home/home2'
+
+var Home = require("bundle-loader?lazy&name=home!./home/home.js");
+// import Home from './home/home'
 
 class App extends Component {
 	render(){
 		return (
 			<div className='asdfas111'>
-				<Route path="/index" component={Home2} />
 				<Route path="/" component={DialogLayout} />
-				<Route path="/home" component={Home2} />
+				<Route path="/home" component={Home} />
 			</div>
 		)
 	}
