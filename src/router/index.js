@@ -4,8 +4,14 @@ import {Link, Route, Redirect, Switch} from "react-router-dom";
 
 // import Bundle from '../components/Bundle/bundle'
 import {DialogLayout} from '../components/Dialog'
-
-var Home = require("bundle-loader?lazy&name=home!./home/home.js");
+import Bundle from './bundle.js';
+// var Home = require("bundle-loader?lazy&name=home!./home/home.js");
+import Home from 'bundle-loader?lazy&name=home!./home/home.js';
+const List = () => (
+    <Bundle load={Home}>
+        {(List) => <List />}
+    </Bundle>
+)
 // import Home from './home/home'
 
 class App extends Component {
@@ -13,7 +19,7 @@ class App extends Component {
 		return (
 			<div className='asdfas111'>
 				<Route path="/" component={DialogLayout} />
-				<Route path="/home" component={Home} />
+				<Route path="/home" component={List} />
 			</div>
 		)
 	}
