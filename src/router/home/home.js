@@ -12,8 +12,6 @@ function mapStateToProps(state){
 class Home extends Component{
 	
 	render(){
-		console.log('render')
-		console.log(this.props)
 		return <h1>首页</h1>
 	}
 }

@@ -2,7 +2,6 @@ import React, { Component } from 'react'
 
 export default class Bundle extends React.Component {
   constructor(props){
-    console.log('---ready---')
     super(props)
      this.state = {
       // short for "module" but that's a keyword in js, so "mod"
@@ -29,7 +28,6 @@ export default class Bundle extends React.Component {
     })
   }
   render() {
-      console.log('---ready---')
     if (!this.state.mod)
       return false
     return this.props.children(this.state.mod)
