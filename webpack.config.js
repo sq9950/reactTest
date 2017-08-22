@@ -22,6 +22,16 @@ module.exports = {
         }
       },
       {
+        test: /\.css$/,
+        use: [{
+          loader: "style-loader" // creates style nodes from JS strings
+        }, {
+          loader: "css-loader" // translates CSS into CommonJS
+        }, {
+          loader: "less-loader" // compiles Less to CSS
+        }]
+      },
+      {
         test: /\.(png|jpg|gif)$/,
         use:[{
           loader: "url-loader?limit=1000"
@@ -32,14 +42,6 @@ module.exports = {
         use: [{
           loader: "file-loader"
         }]
-      },
-      {
-        test: /\.css$/,
-        use: [
-          'style-loader',
-          'css-loader',
-          'less-loader'
-        ]
       }
     ]
   },
