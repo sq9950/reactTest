@@ -14,20 +14,22 @@ import * as _router from 'react-router-dom'
 import App from './router/index'
 
 import { Provider } from 'react-redux';
+import { history } from './store/index';
+
 // import * as _history from 'history'
-import { createBrowserHistory } from 'history'
+// import { createBrowserHistory } from 'history'
 
 import store from './store'
 // console.log('store',store)
 // console.log('browserHistory',browserHistory)
-// console.log('_router',_router)
-console.log('createBrowserHistory',createBrowserHistory)
+console.log('_router',_router)
+// console.log('createBrowserHistory',createBrowserHistory)
 
-const history = createBrowserHistory()
+// const history = createBrowserHistory()
 console.log('history',history)
-history.listen(function(location){
-	console.log('listen',location)
-})
+// history.listen(function(location){
+// 	console.log('listen',location)
+// })
 render(
 	<Provider store={store}>
      	<Router history={history}>

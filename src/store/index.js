@@ -1,4 +1,8 @@
 import { applyMiddleware, compose, createStore } from 'redux'
+import makeRootReducer from './reducers'
+import { createBrowserHistory } from 'history'
+import { updateLocation } from './location'
+
 const ADD_TODO = 'ADD_TODO'
 export const HOME_ADD = 'HOME_ADD'
 function _action(text) {
@@ -24,5 +28,7 @@ function _reducer(state = {}, action) {
       return state
   }
 }
-const store = createStore(_reducer)
+export const history = createBrowserHistory()
+const store = createStore(makeRootReducer)
+store.unsubscribeHistory = history.listen(updateLocation(store))
 export default store
