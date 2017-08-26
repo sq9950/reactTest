@@ -4,7 +4,6 @@ import React, {
 import {
   connect
 } from 'react-redux'
-import {DialogLayout} from '../../components/Dialog'
 import {Link} from "react-router-dom";
 import {
 	homeAdd
@@ -36,7 +35,6 @@ class Home extends Component{
 				<br />
 				<Link to='/home1'>首页1</Link>
 				<Link to='/home2'>首页2</Link>
-				<DialogLayout />
 			</div>
 		)
 		

@@ -6,14 +6,19 @@ import React, {
 import {
   connect
 } from 'react-redux'
-import {DialogLayout} from '../../components/Dialog'
 import {Link} from "react-router-dom";
+import jimu, {Dialog} from "jimu-mobile";
+import 'jimu-mobile/dist/styles/jimu.min.css'
+const {
+	DialogLayout
+} = Dialog
+
 class Home extends Component{
 	
 	render(){
 		return (
 			<div>
-				<DialogLayout />
+				
 			</div>
 		)
 		
