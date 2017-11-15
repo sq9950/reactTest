@@ -22,7 +22,7 @@ class App extends Component {
 				<DialogLayout />
 				<Route path="/" component={utils.syncBundle(Frame)} />
 				<Switch>
-					<Redirect exact from="/" to="/home"></Redirect>
+					<Redirect exact from="/" to="/home" />
 					<Route path="/home" component={utils.syncBundle(Home)} />
 					<Route path="/home1" component={utils.syncBundle(Home1)} />
 					<Route path="/home2" component={utils.syncBundle(Home2)} />
