@@ -4,8 +4,7 @@ import jimu, {Dialog} from "jimu-mobile";
 const {
 	DialogLayout
 } = Dialog
-
-console.log('DialogLayout',DialogLayout)
+import 'jimu-mobile/dist/styles/jimu.min.css';
 import Bundle from '../components/Bundle/bundle.js'
 import * as utils from '../utils/util'
 import Frame from 'bundle-loader?lazy&name=home!./frame';
@@ -18,7 +17,7 @@ import '../styles/babel.css'
 class App extends Component {
 	render(){
 		return (
-			<div className='content'>				
+			<div className='content'>
 				<DialogLayout />
 				<Route path="/" component={utils.syncBundle(Frame)} />
 				<Switch>
