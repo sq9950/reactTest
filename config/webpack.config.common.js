@@ -110,7 +110,7 @@ module.exports = {
         Util: path.resolve(__dirname, 'src/utils/'),
         Reducers: path.resolve(__dirname, 'src/reducers/')
       },
-      extensions: ['.js', '.jsx', '.es6'],
+      extensions: ['.js', '.jsx'],
       modules: [path.resolve(__dirname, "src"), "node_modules"]
     },
     devServerWebpack: devServer
