@@ -9,6 +9,7 @@ module.exports = {
       document: false,
       Swiper: false,
       DDMap: false,
+      Raven: false,
     },
     rules: {
       'camelcase': 0,

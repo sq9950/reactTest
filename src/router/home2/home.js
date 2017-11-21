@@ -1,18 +1,19 @@
 import React, {
-	Component
-} from 'react'
+  Component,
+} from 'react';
 
 
 import {
-  connect
-} from 'react-redux'
-function mapStateToProps(state){
-	return state
+  connect,
+} from 'react-redux';
+
+function mapStateToProps(state) {
+  return state;
 }
-class Home extends Component{
-	render(){
-		return <h1>首页2</h1>
-	}
-}
-const _Home = connect(mapStateToProps)(Home)
-export default _Home
+let Home = class Home extends Component {
+  render() {
+    return <h1>首页2</h1>;
+  }
+};
+Home = connect(mapStateToProps)(Home);
+export default Home;

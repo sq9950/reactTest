@@ -1,12 +1,16 @@
 var path = require('path')
 var webpack = require('webpack')
 var htmlWebpackPlugin = require("html-webpack-plugin");
-let  { moduleWebpack, resolveWebpack,  devServerWebpack } = require('./webpack.config.common.js')
+let  {
+  moduleWebpack,
+  resolveWebpack,
+  devServerWebpack
+} = require('./webpack.config.common.js')
 module.exports = {
   entry: './src/index.js',
   output: {
     path: path.resolve(__dirname, "dist"), // string
-    filename: 'bundle.js',
+    filename: 'main.js',
     chunkFilename: '[name].[chunkhash:5].chunk.js',
   },
   module: moduleWebpack,
