@@ -1,10 +1,10 @@
 import React, { Component } from 'react';
 import { Link, Route, Redirect, Switch } from 'react-router-dom';
-import jimu, { Dialog } from 'jimu-mobile';
+// import jimu, { Dialog } from 'jimu-mobile';
 
-const {
-  DialogLayout,
-} = Dialog;
+// const {
+//   DialogLayout,
+// } = Dialog;
 import 'jimu-mobile/dist/styles/jimu.min.css';
 import Bundle from '../components/Bundle/bundle.js';
 import * as utils from '../utils/util';
@@ -20,7 +20,7 @@ class App extends Component {
   render() {
     return (
       <div className="content">
-        <DialogLayout />
+        {/*<DialogLayout />*/}
         <Route path="/" component={utils.syncBundle(Frame)} />
         <Switch>
           <Redirect exact from="/" to="/home" />
