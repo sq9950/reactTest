@@ -6,6 +6,8 @@ import { Link, Route, Redirect, Switch } from 'react-router-dom';
 //   DialogLayout,
 // } = Dialog;
 import 'jimu-mobile/dist/styles/jimu.min.css';
+import { connect } from 'react-redux';
+
 import Bundle from '../components/Bundle/bundle.js';
 import * as utils from '../utils/util';
 import Frame from 'bundle-loader?lazy&name=main!./frame';
@@ -16,8 +18,19 @@ import Home2 from 'bundle-loader?lazy&name=home2!./home2/home.js';
 
 import '../styles/babel.css';
 
+function mapStateToProps(state,b,c) {
+  console.log('22222222222222222')
+
+  console.log('state',state)
+  console.log('b',b)
+  console.log('c',c)
+  
+  return {a:1}
+}
+
 class App extends Component {
   render() {
+    console.log('this',this)
     return (
       <div className="content">
         {/*<DialogLayout />*/}
@@ -33,4 +46,5 @@ class App extends Component {
   }
 }
 
+export default App = connect(mapStateToProps, null)(App);
 module.exports = App;

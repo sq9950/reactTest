@@ -4,7 +4,7 @@ import { hashHistory } from 'react-router'
 import makeRootReducer from './reducers'
 import { updateLocation } from './location'
 
-export default (initialState = {}) => {
+export default (initialState = {c:1,b:2}) => {
   // ======================================================
   // Middleware Configuration
   // ======================================================
@@ -24,6 +24,7 @@ export default (initialState = {}) => {
   // ======================================================
   // Store Instantiation and HMR Setup
   // ======================================================
+  console.log('initialState',initialState)
   const store = createStore(
     makeRootReducer(),
     initialState,

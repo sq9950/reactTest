@@ -15,8 +15,8 @@ __dirname = path.resolve(__dirname, '..')
 //   }
 //
 const devServer = {
-    port:8080,
-    historyApiFallback:true,
+    port:3001,
+    historyApiFallback: true,
     contentBase:"./dist",
     inline: false,
     stats:{
