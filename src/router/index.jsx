@@ -11,29 +11,23 @@ import { connect } from 'react-redux';
 import Bundle from '../components/Bundle/bundle.js';
 import * as utils from '../utils/util';
 import Frame from 'bundle-loader?lazy&name=main!./frame';
-import Home from 'bundle-loader?lazy&name=home!./home/home.js';
-import Home1 from 'bundle-loader?lazy&name=home1!./home1/home.js';
-import Home2 from 'bundle-loader?lazy&name=home2!./home2/home.js';
+import Home from 'bundle-loader?lazy&name=home!./home/home';
+import Home1 from 'bundle-loader?lazy&name=home1!./home1/home';
+import Home2 from 'bundle-loader?lazy&name=home2!./home2/home';
 
 
 import '../styles/babel.css';
 
-function mapStateToProps(state,b,c) {
-  console.log('22222222222222222')
+function mapStateToProps(state, b, c) {
 
-  console.log('state',state)
-  console.log('b',b)
-  console.log('c',c)
-  
-  return {a:1}
+  return { a: 1 };
 }
 
 class App extends Component {
   render() {
-    console.log('this',this)
     return (
       <div className="content">
-        {/*<DialogLayout />*/}
+        {/* <DialogLayout /> */}
         <Route path="/" component={utils.syncBundle(Frame)} />
         <Switch>
           <Redirect exact from="/" to="/home" />

@@ -1,6 +1,5 @@
 import { createStore } from 'redux';
 import { createBrowserHistory } from 'history';
-console.log('111')
 import { updateLocation } from './location';
 import makeRootReducer from './reducers';
 
@@ -19,7 +18,6 @@ function _reducer(state = {}, action) {
         visibilityFilter: action.filter,
       });
     case HOME_ADD:
-      console.log('HOME_ADD');
       return Object.assign({}, state, {
         visibilityFilter: 1,
       });
@@ -29,9 +27,7 @@ function _reducer(state = {}, action) {
   }
 }
 // export const history = createBrowserHistory();
-const store = createStore(_reducer,{
-	a:1
-});
-console.log('store222',store.getState())
+const store = createStore(_reducer);
+window.store = store
 // store.unsubscribeHistory = history.listen(updateLocation(store));
 export default store;

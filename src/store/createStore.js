@@ -24,7 +24,6 @@ export default (initialState = {c:1,b:2}) => {
   // ======================================================
   // Store Instantiation and HMR Setup
   // ======================================================
-  console.log('initialState',initialState)
   const store = createStore(
     makeRootReducer(),
     initialState,
