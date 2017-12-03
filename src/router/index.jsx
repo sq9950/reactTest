@@ -40,5 +40,5 @@ class App extends Component {
   }
 }
 
-export default App = connect(mapStateToProps, null)(App);
+// export default App = connect(mapStateToProps, null)(App);
 module.exports = App;

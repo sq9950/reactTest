@@ -7,7 +7,7 @@ let  {
   devServerWebpack
 } = require('./webpack.config.common.js')
 module.exports = {
-  entry: './src/index.js',
+  entry: './src/index.jsx',
   output: {
     path: path.resolve(__dirname, "dist"), // string
     filename: 'main.js',

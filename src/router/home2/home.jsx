@@ -15,5 +15,5 @@ let Home = class Home extends Component {
     return <h1>首页2</h1>;
   }
 };
-Home = connect(mapStateToProps)(Home);
+// Home = connect(mapStateToProps)(Home);
 export default Home;

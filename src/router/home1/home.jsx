@@ -15,5 +15,5 @@ class Home extends Component{
 		return <h1>首页1</h1>
 	}
 }
-const _Home = connect(mapStateToProps)(Home)
-export default _Home
+// const _Home = connect(mapStateToProps)(Home)
+export default Home

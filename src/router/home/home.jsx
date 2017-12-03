@@ -1,18 +1,22 @@
 import React, {
   Component,
 } from 'react';
-import {
-  connect,
-} from 'react-redux';
 import { Link } from 'react-router-dom';
-import {
-  homeAdd,
-} from './actions';
-import './reducer';
 
-function mapStateToProps(state) {
-  return state;
-}
+import { observer } from 'mobx-react';
+import mobx, { observable } from 'mobx';
+// 通过 observable 定义组件的状态
+const user = mobx.observable({
+  count: 1,
+});
+const add = mobx.action(count => {
+  window.setTimeout(function(){
+    user.count = count
+  },2000)
+  
+});
+
+@observer
 class Home extends Component {
   constructor(props) {
     super(props);
@@ -20,24 +24,16 @@ class Home extends Component {
       data: 1,
     };
   }
-  componentWillReceiveProps(nextProps) {
-    this.setState({
-      data: nextProps.data,
-    });
-  }
   add() {
-    const {
-      dispatch,
-    } = this.props;
-    const data = this.state.data + 1;
-    dispatch(homeAdd(data));
+    add(user.count + 1);
   }
   render() {
+    console.log('render', user);
     return (
       <div>
         <h1>首页</h1>
         <br />
-        <span>{this.state.data}</span>
+        <span>{user.count}</span>
         <br />
         <button className="fz14" onClick={this.add.bind(this)}>+</button>
         <button className="ml10 fz14">-</button>
@@ -48,5 +44,5 @@ class Home extends Component {
     );
   }
 }
-const _Home = connect(mapStateToProps)(Home);
-export default _Home;
+// const _Home = connect(mapStateToProps)(Home);
+export default Home;
