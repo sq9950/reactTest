@@ -4,7 +4,8 @@ import locationReducer from './location';
 export const makeRootReducer = asyncReducers => combineReducers({
   location: locationReducer,
   ...asyncReducers,
-  a:1,b:2
+  a: 1,
+  b: 2,
 });
 
 export const injectReducer = (store, { key, reducer }) => {
