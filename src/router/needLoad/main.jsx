@@ -41,7 +41,7 @@ class Home extends Component {
           <button className="fz14" onClick={this.add}>+</button>
           <button className="ml10 fz14" onClick={this.less}>-</button>
         </div>
-        <h1>demo1：下面按钮，数据变换后不显示在页面上</h1>
+        <h1>下面按钮，数据变换后不触发render</h1>
         <div className='btnCon'>
           <button className="fz14" onClick={this.needAdd}>+</button>
           <button className="ml10 fz14" onClick={this.needLess}>-</button>
