@@ -12,10 +12,10 @@ import Bundle from '../components/Bundle/bundle.js';
 import * as utils from '../utils/util';
 import Frame from 'bundle-loader?lazy&name=main!./frame';
 import Home from 'bundle-loader?lazy&name=home!./home/main';
-import btnAdd from 'bundle-loader?lazy&name=home!./btnAdd/main';
+import btnAdd from 'bundle-loader?lazy&name=btnAdd!./btnAdd/main';
 
-import needLoad from 'bundle-loader?lazy&name=home1!./needLoad/main';
-import Home2 from 'bundle-loader?lazy&name=home2!./home2/home';
+import needLoad from 'bundle-loader?lazy&name=needLoad!./needLoad/main';
+import autorun from 'bundle-loader?lazy&name=autorun!./autorun/main';
 
 
 import '../styles/babel.css';
@@ -36,6 +36,7 @@ class App extends Component {
           <Route path="/home" component={utils.syncBundle(Home)} />
           <Route path="/btnAdd" component={utils.syncBundle(btnAdd)} />
           <Route path="/needLoad" component={utils.syncBundle(needLoad)} />
+          <Route path="/autorun" component={utils.syncBundle(autorun)} />
         </Switch>
       </div>
     );

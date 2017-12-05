@@ -32,6 +32,9 @@ class Home extends Component {
         <li>
           <Link to="/needLoad">2、按需加载</Link>
         </li>
+        <li>
+          <Link to="/autorun">3、autorun</Link>
+        </li>
       </ul>,
     ];
   }
