@@ -3,6 +3,7 @@ module.exports = {
     "parser": "babel-eslint",
     globals: {
       sessionStorage: false,
+      document: false,
       window: false,
       Headers: false,
       rootPath: false,

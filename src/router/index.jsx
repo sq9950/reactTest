@@ -11,8 +11,10 @@ import { connect } from 'react-redux';
 import Bundle from '../components/Bundle/bundle.js';
 import * as utils from '../utils/util';
 import Frame from 'bundle-loader?lazy&name=main!./frame';
-import Home from 'bundle-loader?lazy&name=home!./home/home';
-import Home1 from 'bundle-loader?lazy&name=home1!./home1/home';
+import Home from 'bundle-loader?lazy&name=home!./home/main';
+import btnAdd from 'bundle-loader?lazy&name=home!./btnAdd/main';
+
+import setTimeoutAction from 'bundle-loader?lazy&name=home1!./setTimeoutAction/main';
 import Home2 from 'bundle-loader?lazy&name=home2!./home2/home';
 
 
@@ -32,8 +34,8 @@ class App extends Component {
         <Switch>
           <Redirect exact from="/" to="/home" />
           <Route path="/home" component={utils.syncBundle(Home)} />
-          <Route path="/home1" component={utils.syncBundle(Home1)} />
-          <Route path="/home2" component={utils.syncBundle(Home2)} />
+          <Route path="/btnAdd" component={utils.syncBundle(btnAdd)} />
+          <Route path="/setTimeoutAction" component={utils.syncBundle(setTimeoutAction)} />
         </Switch>
       </div>
     );
