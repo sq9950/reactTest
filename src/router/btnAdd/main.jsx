@@ -22,6 +22,12 @@ class Home extends Component {
   less() {
     homeStore.less();
   }
+  syncAdd() {
+    homeStore.syncAdd();
+  }
+  syncLess() {
+    homeStore.syncLess();
+  }
   render() {
     return (
       <div>
@@ -33,8 +39,14 @@ class Home extends Component {
           <button className="fz14" onClick={this.add}>+</button>
           <button className="ml10 fz14" onClick={this.less}>-</button>
         </div>
-        <Link to="/home1">首页1</Link>
-        <Link to="/home2">首页2</Link>
+        <h1>demo1：延时加减</h1>
+        <div className='con'>
+          <span>{homeStore.syncCount}</span>
+        </div>
+        <div className='btnCon'>
+          <button className="fz14" onClick={this.syncAdd}>+</button>
+          <button className="ml10 fz14" onClick={this.syncLess}>-</button>
+        </div>
       </div>
     );
   }

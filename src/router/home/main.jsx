@@ -30,7 +30,7 @@ class Home extends Component {
           <Link to="/btnAdd">1、简单的加减按钮</Link>
         </li>
         <li>
-          <Link to="/setTimeoutAction">2、延时action</Link>
+          <Link to="/needLoad">2、按需加载</Link>
         </li>
       </ul>,
     ];

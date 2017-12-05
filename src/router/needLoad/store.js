@@ -2,17 +2,20 @@ import { observable, action } from 'mobx';
 
 const homeStore = observable({
   count: 1,
+  needCount:1,
   add: action.bound(function () {
-  	const self = this;
-  	window.setTimeout(() => {
-  		self.count++;
-  	}, 1000);
+  	this.count++;
   }),
   less: action.bound(function () {
-  	const self = this;
-  	window.setTimeout(() => {
-  		self.count--;
-  	}, 1000);
+  	this.count--;
+  }),
+
+
+  needAdd: action.bound(function () {
+    this.needCount++;
+  }),
+  needLess: action.bound(function () {
+    this.needCount--;
   }),
 });
 export default homeStore;
