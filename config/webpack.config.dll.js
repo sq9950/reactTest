@@ -26,53 +26,11 @@ module.exports = {
     ]
   },
   output: {
-    path: path.join(__dirname, 'dist/dist/'),
+    path: path.join(__dirname, 'dist'),
     filename: '[name].[chunkhash].js',
     library: '[name]_[chunkhash]',
-    publicPath: '/dist/'
   },
   module: config.moduleConfig,
   resolve: config.resolveConfig,
-  plugins: [
-    // 最小化加载
-    new webpack.LoaderOptionsPlugin({
-      minimize: true,
-      debug: false
-    }),
-    new webpack.DefinePlugin({
-      'process.env': {
-        NODE_ENV: JSON.stringify('production') //react切换到produco版本
-      }
-    }),
-    // 并行压缩
-    new UglifyJsParallelPlugin({
-      workers: os.cpus().length,
-      beautify: false,
-      mangle: {
-          screw_ie8: true,
-          keep_fnames: true
-      },
-      compress: {
-          screw_ie8: true,
-          warnings: false
-      },
-      warning: false,
-      comments: false
-    }),
-    // 并行构建
-    new HappyPack({
-      loaders: ['babel-loader'],
-      cache: true,
-      threads: os.cpus().length
-    }),
-    // dll 生成
-    new webpack.DllPlugin({
-      path: path.join(__dirname, 'log', '[name]-manifest.json'),
-      name: '[name]_[chunkhash]'
-    }),
-    new AssetsPlugin({
-      filename: 'assetsplugin.json',
-      path: path.join(__dirname, 'log'),
-    })
-  ]
+  plugins: config.resolveConfig
 };
