@@ -6,7 +6,8 @@
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "start": "./node_modules/.bin/webpack-dev-server --config config/webpack.config.js",
-    "build": "rm -rf dist/ && ./node_modules/.bin/webpack --config config/webpack.config.prod.js --progress --colors --optimize-minimize"
+    "buildlib": "./node_modules/.bin/webpack -p --config config/webpack.config.dll.js",
+    "build": "rm -rf dist log && npm run buildlib && ./node_modules/.bin/webpack --config config/webpack.config.prod.js --progress --colors --optimize-minimize"
   },
   "author": "",
   "license": "ISC",

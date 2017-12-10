@@ -1,13 +1,13 @@
 var path = require('path')
 var webpack = require('webpack')
 var htmlWebpackPlugin = require("html-webpack-plugin");
-let  {
-  moduleWebpack,
-  resolveWebpack,
-  devServerWebpack
-} = require('./webpack.config.common.js')
+
 var BundleAnalyzerPlugin = require('webpack-bundle-analyzer').BundleAnalyzerPlugin;
 const WebpackMonitor = require('webpack-monitor');
+
+
+var config = require("./blockConfig");
+
 module.exports = {
   entry: './src/index.jsx',
   output: {
@@ -15,10 +15,10 @@ module.exports = {
     filename: 'main.js',
     chunkFilename: '[name].[chunkhash:5].chunk.js',
   },
-  module: moduleWebpack,
+  module: config.moduleConfig,
   devtool: 'cheap-source-map',
-  devServer: devServerWebpack,
-  resolve: resolveWebpack,
+  devServer: config.devServerConfig,
+  resolve: config.resolveConfig,
   plugins: [
     new htmlWebpackPlugin({
       title: "搭建前端工作流",

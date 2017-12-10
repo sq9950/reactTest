@@ -5,7 +5,7 @@ const webpack = require('webpack');
 var Visualizer = require('webpack-visualizer-plugin');
 
 // 引用公共配置
-let  { moduleWebpack, resolveWebpack } = require('./webpack.config.common.js')
+var config = require("./blockConfig");
 
 // 自动插入html
 const AssetsPlugin = require('assets-webpack-plugin');
@@ -31,8 +31,8 @@ module.exports = {
     library: '[name]_[chunkhash]',
     publicPath: '/dist/'
   },
-  module: moduleWebpack,
-  resolve: resolveWebpack,
+  module: config.moduleConfig,
+  resolve: config.resolveConfig,
   plugins: [
     // 最小化加载
     new webpack.LoaderOptionsPlugin({
@@ -73,10 +73,6 @@ module.exports = {
     new AssetsPlugin({
       filename: 'assetsplugin.json',
       path: path.join(__dirname, 'log'),
-    }),
-    // 项目依赖图
-    new Visualizer({
-      filename: '../../log/statistics-vendor.html',
-    }),
+    })
   ]
 };

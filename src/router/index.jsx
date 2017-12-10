@@ -1,9 +1,8 @@
 import React, { Component } from 'react';
 import { Link, Route, Redirect, Switch } from 'react-router-dom';
-import DialogLayout from 'jimu-mobile/dist/components/dialog/DialogLayout';
-// import {DialogLayout} from 'Component';
+// import DialogLayout from 'jimu-mobile/dist/components/dialog/DialogLayout';
+import {DialogLayout} from 'Components';
 
-import 'jimu-mobile/dist/styles/jimu.min.css';
 import { connect } from 'react-redux';
 
 import Bundle from '../components/Bundle/bundle.js';
