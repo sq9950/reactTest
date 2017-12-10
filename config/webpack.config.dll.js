@@ -32,5 +32,5 @@ module.exports = {
   },
   module: config.moduleConfig,
   resolve: config.resolveConfig,
-  plugins: config.resolveConfig
+  plugins: config.dllPluginConfig
 };

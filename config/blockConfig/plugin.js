@@ -8,20 +8,8 @@ var HtmlWebpackPlugin = require("html-webpack-plugin");
 var UglifyJsParallelPlugin = require('webpack-uglify-parallel')
 var BundleAnalyzerPlugin = require('webpack-bundle-analyzer').BundleAnalyzerPlugin;
 //引用libjs
-// var bundleConfig = require("../../log/assetsplugin.json")
 __dirname = path.resolve(__dirname, '../..')
 
-const _DllReferencePlugin = new webpack.DllReferencePlugin({
-  context: __dirname,
-  // manifest: require('../../log/vendor-manifest.json')
-})
-const _prod_HtmlWebpackPlugin = new HtmlWebpackPlugin({
-  title: '主页',
-  template: './src/index.html',
-  filename: 'index.html',
-  // bundleName: bundleConfig.vendor.js, //追加默认dll
-  inject: 'body'
-})
 const _dev_HtmlWebpackPlugin = new HtmlWebpackPlugin({
   title: '主页——dev',
   template: './src/index.html',
@@ -124,14 +112,28 @@ const dllPluginConfig = [
   _DllPlugin,
   _AssetsPlugin,
 ];
+// var bundleConfig = require("../../log/assetsplugin.json")
+const _prod_HtmlWebpackPlugin = new HtmlWebpackPlugin({
+  title: '主页',
+  template: './src/index.html',
+  filename: 'index.html',
+  // bundleName: bundleConfig.vendor.js, //追加默认dll
+  inject: 'body'
+})
+const _DllReferencePlugin = new webpack.DllReferencePlugin({
+  context: __dirname,
+  // manifest: require('../../log/vendor-manifest.json')
+})
 const prodPluginConfig = [
-  _DllReferencePlugin,
+  _LoaderOptionsPlugin,
+  _HappyPack,
   _prod_HtmlWebpackPlugin,
   _BundleAnalyzerPlugin
 ]
 
 
 module.exports = {
+  dllPluginConfig,
   prodPluginConfig,
   developPluginConfig
 }
