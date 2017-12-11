@@ -11,6 +11,7 @@ module.exports = {
     path: path.resolve(__dirname, "dist"), // string
     filename: 'main.js',
     chunkFilename: '[name].[chunkhash:5].chunk.js',
+    publicPath: '/'
   },
   module: config.moduleConfig,
   devtool: 'cheap-source-map',

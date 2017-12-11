@@ -28,6 +28,7 @@ class Home extends Component {
   render() {
     return <div className='h1'>
       <div className='h1'>test</div>
+      <Route path="/test/test2" component={utils.syncBundle(test2)} />
       <Link to="/test/test2">1、简单的加减按钮</Link>
     </div>;
   }

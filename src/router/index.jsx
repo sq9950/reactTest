@@ -14,8 +14,8 @@ import btnAdd from 'bundle-loader?lazy&name=btnAdd!./btnAdd/main';
 import needLoad from 'bundle-loader?lazy&name=needLoad!./needLoad/main';
 import autorun from 'bundle-loader?lazy&name=autorun!./autorun/main';
 
-import test from 'bundle-loader?lazy&name=test!./test/main';
-import test2 from 'bundle-loader?lazy&name=test!./test/test2';
+import test from 'bundle-loader?lazy&name=test!./test/test';
+import test2 from 'bundle-loader?lazy&name=test2!./test/test2';
 
 
 import '../styles/babel.css';
@@ -37,7 +37,6 @@ class App extends Component {
           <Route path="/btnAdd" component={utils.syncBundle(btnAdd)} />
           <Route path="/needLoad" component={utils.syncBundle(needLoad)} />
           <Route path="/autorun" component={utils.syncBundle(autorun)} />
-          <Route path="/test/test2" component={utils.syncBundle(test2)} />
           <Route path="/test" component={utils.syncBundle(test)} />
         </Switch>
       </div>
