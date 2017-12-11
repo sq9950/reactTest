@@ -4,17 +4,12 @@ var path = require('path')
 const webpack = require('webpack');
 var HappyPack = require('happypack');
 const AssetsPlugin = require('assets-webpack-plugin');
-var HtmlWebpackPlugin = require("html-webpack-plugin");
 var UglifyJsParallelPlugin = require('webpack-uglify-parallel')
 var BundleAnalyzerPlugin = require('webpack-bundle-analyzer').BundleAnalyzerPlugin;
 //引用libjs
 __dirname = path.resolve(__dirname, '../..')
 
-const _dev_HtmlWebpackPlugin = new HtmlWebpackPlugin({
-  title: '主页——dev',
-  template: './src/index.html',
-  filename: 'index.html',
-})
+
 const _BundleAnalyzerPlugin = new BundleAnalyzerPlugin({
   // Can be `server`, `static` or `disabled`.
   // In `server` mode analyzer will start HTTP server to show bundle report.
@@ -101,7 +96,6 @@ const _AssetsPlugin = new AssetsPlugin({
 
 
 const developPluginConfig = [
-  _dev_HtmlWebpackPlugin,
   _BundleAnalyzerPlugin
 ]
 const dllPluginConfig = [
@@ -112,22 +106,10 @@ const dllPluginConfig = [
   _DllPlugin,
   _AssetsPlugin,
 ];
-// var bundleConfig = require("../../log/assetsplugin.json")
-const _prod_HtmlWebpackPlugin = new HtmlWebpackPlugin({
-  title: '主页',
-  template: './src/index.html',
-  filename: 'index.html',
-  // bundleName: bundleConfig.vendor.js, //追加默认dll
-  inject: 'body'
-})
-const _DllReferencePlugin = new webpack.DllReferencePlugin({
-  context: __dirname,
-  // manifest: require('../../log/vendor-manifest.json')
-})
+
 const prodPluginConfig = [
   _LoaderOptionsPlugin,
   _HappyPack,
-  _prod_HtmlWebpackPlugin,
   _BundleAnalyzerPlugin
 ]
 

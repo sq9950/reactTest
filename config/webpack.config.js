@@ -1,9 +1,6 @@
 var path = require('path')
 var webpack = require('webpack')
-var htmlWebpackPlugin = require("html-webpack-plugin");
-
-var BundleAnalyzerPlugin = require('webpack-bundle-analyzer').BundleAnalyzerPlugin;
-const WebpackMonitor = require('webpack-monitor');
+var HtmlWebpackPlugin = require("html-webpack-plugin");
 
 
 var config = require("./blockConfig");
@@ -19,5 +16,12 @@ module.exports = {
   devtool: 'cheap-source-map',
   devServer: config.devServerConfig,
   resolve: config.resolveConfig,
-  plugins: config.developPluginConfig
+  plugins: [
+    ...config.developPluginConfig,
+    new HtmlWebpackPlugin({
+      title: '主页——dev',
+      template: './src/index.html',
+      filename: 'index.html',
+    })
+  ]
 }

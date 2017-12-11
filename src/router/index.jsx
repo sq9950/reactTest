@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import { Link, Route, Redirect, Switch } from 'react-router-dom';
 // import DialogLayout from 'jimu-mobile/dist/components/dialog/DialogLayout';
-import {DialogLayout} from 'Components';
+// import {DialogLayout} from 'Components';
 
 import { connect } from 'react-redux';
 
@@ -26,7 +26,7 @@ class App extends Component {
   render() {
     return (
       <div className="content">
-        <DialogLayout />
+        {/*<DialogLayout />*/}
         <Route path="/" component={utils.syncBundle(Frame)} />
         <Switch>
           <Redirect exact from="/" to="/home" />
