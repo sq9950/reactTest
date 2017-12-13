@@ -2,8 +2,8 @@
 ```
 // 启动服务
   npm start
+  
 // 编译代码
-
   npm run build 
 
 // 编译公共组建
