@@ -1,0 +1,11 @@
+{
+    "linters": {
+        "eslint": {
+            "excludes": [
+                "**/es-webapp/config/*",
+                "**/es-webapp/dist/*",
+                "**/es-webapp/resources/*"
+            ]
+        }
+    }
+}
