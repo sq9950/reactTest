@@ -21,6 +21,10 @@ class Home extends Component {
   static syncLess() {
     homeStore.syncLess();
   }
+  static ajax() {
+    homeStore.ajax();
+  }
+
   render() {
     return (
       <div>
@@ -39,6 +43,13 @@ class Home extends Component {
         <div className="btnCon">
           <button className="fz14" onClick={Home.syncAdd}>+</button>
           <button className="ml10 fz14" onClick={Home.syncLess}>-</button>
+        </div>
+        <h1>demo1：fetch</h1>
+        <div className="con">
+          <span>{homeStore.data && homeStore.data.errmsg}</span>
+        </div>
+        <div className="btnCon">
+          <button className="fz14" onClick={Home.ajax}>+</button>
         </div>
       </div>
     );
