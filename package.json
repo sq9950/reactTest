@@ -7,10 +7,17 @@
     "test": "echo \"Error: no test specified\" && exit 1",
     "start": "./node_modules/.bin/webpack-dev-server --config config/webpack.config.js",
     "buildlib": "./node_modules/.bin/webpack -p --config config/webpack.config.dll.js",
-    "build": "rm -rf dist log && npm run buildlib && ./node_modules/.bin/webpack --config config/webpack.config.prod.js --progress --colors --optimize-minimize"
+    "build": "rm -rf dist log && npm run buildlib && ./node_modules/.bin/webpack --config config/webpack.config.prod.js --progress --colors --optimize-minimize",
+    "lint": "./node_modules/.bin/eslint 'src/**'"
   },
+
   "author": "",
   "license": "ISC",
+  "config": {
+    "ghooks": {
+      "pre-commit": "npm run lint"
+    }
+  },
   "devDependencies": {
     "assets-webpack-plugin": "^3.5.1",
     "babel-cli": "^6.26.0",
