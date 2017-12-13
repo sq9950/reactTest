@@ -1,9 +1,9 @@
-import mobx, { observable } from 'mobx';
+import { observable } from 'mobx';
 import { RouterStore } from 'mobx-react-router';
 
 const routingStore = new RouterStore();
 
-const publicStore = mobx.observable({
+const publicStore = observable({
   home: 1,
 });
 

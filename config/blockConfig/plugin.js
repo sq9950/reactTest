@@ -1,13 +1,15 @@
 
-var os = require('os')
-var path = require('path')
+const os = require('os');
+const path = require('path');
 const webpack = require('webpack');
-var HappyPack = require('happypack');
+const HappyPack = require('happypack');
 const AssetsPlugin = require('assets-webpack-plugin');
-var UglifyJsParallelPlugin = require('webpack-uglify-parallel')
-var BundleAnalyzerPlugin = require('webpack-bundle-analyzer').BundleAnalyzerPlugin;
-//引用libjs
-__dirname = path.resolve(__dirname, '../..')
+const UglifyJsParallelPlugin = require('webpack-uglify-parallel');
+const BundleAnalyzerPlugin = require('webpack-bundle-analyzer').BundleAnalyzerPlugin;
+
+var FriendlyErrorsPlugin = require('friendly-errors-webpack-plugin')
+// 引用libjs
+__dirname = path.resolve(__dirname, '../..');
 
 
 const _BundleAnalyzerPlugin = new BundleAnalyzerPlugin({
@@ -39,65 +41,59 @@ const _BundleAnalyzerPlugin = new BundleAnalyzerPlugin({
   // See more options here: https://github.com/webpack/webpack/blob/webpack-1/lib/Stats.js#L21
   statsOptions: null,
   // Log level. Can be 'info', 'warn', 'error' or 'silent'.
-  logLevel: 'info'
-})
+  logLevel: 'info',
+});
 // 最小化加载
 const _LoaderOptionsPlugin = new webpack.LoaderOptionsPlugin({
   minimize: true,
-  debug: false
-})
+  debug: false,
+});
 const _prod_DefinePlugin = new webpack.DefinePlugin({
   'process.env': {
-    NODE_ENV: JSON.stringify('production') //react切换到produco版本
-  }
-})
+    NODE_ENV: JSON.stringify('production'), // react切换到produco版本
+  },
+});
 const _develop_DefinePlugin = new webpack.DefinePlugin({
   'process.env': {
-    NODE_ENV: JSON.stringify('develop') //react切换到produco版本
-  }
-})
+    NODE_ENV: JSON.stringify('develop'), // react切换到produco版本
+  },
+});
 // 并行压缩
 const _UglifyJsParallelPlugin = new UglifyJsParallelPlugin({
   workers: os.cpus().length,
   beautify: false,
   mangle: {
-      screw_ie8: true,
-      keep_fnames: true
+    screw_ie8: true,
+    keep_fnames: true,
   },
   compress: {
-      screw_ie8: true,
-      warnings: false
+    screw_ie8: true,
+    warnings: false,
   },
   warning: false,
-  comments: false
-})
+  comments: false,
+});
 // 并行构建
 const _HappyPack = new HappyPack({
   loaders: ['babel-loader'],
   cache: true,
-  threads: os.cpus().length
-})
+  threads: os.cpus().length,
+});
 // dll 生成
 const _DllPlugin = new webpack.DllPlugin({
   path: path.join(__dirname, 'log', '[name]-manifest.json'),
-  name: '[name]_[chunkhash]'
-})
+  name: '[name]_[chunkhash]',
+});
 const _AssetsPlugin = new AssetsPlugin({
   filename: 'assetsplugin.json',
   path: path.join(__dirname, 'log'),
-})
+});
 
-
-
-
-
-
-
-
+const _FriendlyErrorsPlugin = new FriendlyErrorsPlugin();
 
 const developPluginConfig = [
-  _BundleAnalyzerPlugin
-]
+  _FriendlyErrorsPlugin,
+];
 const dllPluginConfig = [
   _LoaderOptionsPlugin,
   _prod_DefinePlugin,
@@ -110,12 +106,12 @@ const dllPluginConfig = [
 const prodPluginConfig = [
   _LoaderOptionsPlugin,
   _HappyPack,
-  _BundleAnalyzerPlugin
-]
+  _BundleAnalyzerPlugin,
+];
 
 
 module.exports = {
   dllPluginConfig,
   prodPluginConfig,
-  developPluginConfig
-}
+  developPluginConfig,
+};

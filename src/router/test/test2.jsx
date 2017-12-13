@@ -1,13 +1,6 @@
-import React, { Component } from 'react';
+import React from 'react';
 
 import './style.css';
 
-class Home extends Component {
-  render() {
-    return <div className='h1'>
-      test2
-    </div>;
-  }
-}
-// const _Home = connect(mapStateToProps)(Home);
+const Home = () => <div className="h1">test2</div>;
 export default Home;
