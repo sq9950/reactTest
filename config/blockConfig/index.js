@@ -1,19 +1,19 @@
 
-let {devServerConfig} = require("./devServer");
-let {moduleConfig} = require("./module");
-let {
-  prodPluginConfig,
-  dllPluginConfig,
-  developPluginConfig,
-} = require("./plugin");
+const { devServerConfig } = require('./devServer');
+const { moduleConfig } = require('./module');
+const {
+  prod_pluginConfig,
+  dll_pluginConfig,
+  dev_pluginConfig,
+} = require('./plugin');
 
-let {resolveConfig} = require("./resolve");
+const { resolveConfig } = require('./resolve');
 
 module.exports = {
-	devServerConfig,
-	moduleConfig,
-	prodPluginConfig,
-	dllPluginConfig,
-	developPluginConfig,
-	resolveConfig
-}
+  devServerConfig,
+  moduleConfig,
+  prod_pluginConfig,
+  dll_pluginConfig,
+  dev_pluginConfig,
+  resolveConfig,
+};

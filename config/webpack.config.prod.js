@@ -18,7 +18,12 @@ module.exports = {
   module: config.moduleConfig,
   resolve: config.resolveConfig,
   plugins: [
-    ...config.prodPluginConfig,
+    ...config.prod_pluginConfig,
+    new webpack.DefinePlugin({
+      'process.env': {
+        NODE_ENV: JSON.stringify('production'), // react切换到produco版本
+      },
+    });
     new HtmlWebpackPlugin({
       title: '主页',
       template: './src/index.html',

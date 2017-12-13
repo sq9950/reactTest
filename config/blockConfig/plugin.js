@@ -1,4 +1,3 @@
-
 const os = require('os');
 const path = require('path');
 const webpack = require('webpack');
@@ -6,12 +5,11 @@ const HappyPack = require('happypack');
 const AssetsPlugin = require('assets-webpack-plugin');
 const UglifyJsParallelPlugin = require('webpack-uglify-parallel');
 const BundleAnalyzerPlugin = require('webpack-bundle-analyzer').BundleAnalyzerPlugin;
-
-var FriendlyErrorsPlugin = require('friendly-errors-webpack-plugin')
+const FriendlyErrorsPlugin = require('friendly-errors-webpack-plugin');
 // 引用libjs
 __dirname = path.resolve(__dirname, '../..');
 
-
+// webpack 包分析器
 const _BundleAnalyzerPlugin = new BundleAnalyzerPlugin({
   // Can be `server`, `static` or `disabled`.
   // In `server` mode analyzer will start HTTP server to show bundle report.
@@ -43,20 +41,11 @@ const _BundleAnalyzerPlugin = new BundleAnalyzerPlugin({
   // Log level. Can be 'info', 'warn', 'error' or 'silent'.
   logLevel: 'info',
 });
+
 // 最小化加载
 const _LoaderOptionsPlugin = new webpack.LoaderOptionsPlugin({
   minimize: true,
   debug: false,
-});
-const _prod_DefinePlugin = new webpack.DefinePlugin({
-  'process.env': {
-    NODE_ENV: JSON.stringify('production'), // react切换到produco版本
-  },
-});
-const _develop_DefinePlugin = new webpack.DefinePlugin({
-  'process.env': {
-    NODE_ENV: JSON.stringify('develop'), // react切换到produco版本
-  },
 });
 // 并行压缩
 const _UglifyJsParallelPlugin = new UglifyJsParallelPlugin({
@@ -84,34 +73,34 @@ const _DllPlugin = new webpack.DllPlugin({
   path: path.join(__dirname, 'log', '[name]-manifest.json'),
   name: '[name]_[chunkhash]',
 });
+
 const _AssetsPlugin = new AssetsPlugin({
   filename: 'assetsplugin.json',
   path: path.join(__dirname, 'log'),
 });
-
+// 优化报错输出
 const _FriendlyErrorsPlugin = new FriendlyErrorsPlugin();
 
-const developPluginConfig = [
+const dev_pluginConfig = [
   _FriendlyErrorsPlugin,
 ];
-const dllPluginConfig = [
+
+const dll_pluginConfig = [
   _LoaderOptionsPlugin,
-  _prod_DefinePlugin,
   _UglifyJsParallelPlugin,
   _HappyPack,
   _DllPlugin,
   _AssetsPlugin,
 ];
 
-const prodPluginConfig = [
+const prod_pluginConfig = [
   _LoaderOptionsPlugin,
   _HappyPack,
   _BundleAnalyzerPlugin,
 ];
 
-
 module.exports = {
-  dllPluginConfig,
-  prodPluginConfig,
-  developPluginConfig,
+  dll_pluginConfig,
+  prod_pluginConfig,
+  dev_pluginConfig,
 };

@@ -18,7 +18,12 @@ module.exports = {
   devServer: config.devServerConfig,
   resolve: config.resolveConfig,
   plugins: [
-    ...config.developPluginConfig,
+    ...config.dev_pluginConfig,
+    new webpack.DefinePlugin({
+      'process.env': {
+        NODE_ENV: JSON.stringify('develop'), // react切换到produco版本
+      },
+    }),
     new HtmlWebpackPlugin({
       title: '主页——dev',
       template: './src/index.html',
