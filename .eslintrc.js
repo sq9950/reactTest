@@ -12,6 +12,7 @@ module.exports = {
       DDMap: false,
       Raven: false,
       __dirname: false,
+      fetch:false,
     },
     rules: {
       'camelcase': 0,
