@@ -5,7 +5,7 @@ import test2 from 'bundle-loader?lazy&name=test!./test2';
 
 import * as utils from '../../utils/util';
 import homeStore from './store';
-import './style.css';
+import './style';
 
 @observer
 class Home extends Component {

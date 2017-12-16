@@ -4,7 +4,7 @@ import React, { Component } from 'react';
 import { inject, observer } from 'mobx-react';
 import { autorun, computed } from 'mobx';
 import AutorunStore from './store';
-import './style.css';
+import './style';
 
 @inject('routing')
 @inject('publicStore')
@@ -38,7 +38,7 @@ class AutorunComponent extends Component {
   }
   render() {
     return (
-      <div>
+      <div className="autorunCon">
         <h1>demo1：按需加载</h1>
         <div className="con">
           <span>count：{AutorunStore.count}</span>

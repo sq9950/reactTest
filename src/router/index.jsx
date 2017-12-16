@@ -16,7 +16,7 @@ import test from 'bundle-loader?lazy&name=test!./test/test';
 import * as utils from '../utils/util';
 
 
-import '../styles/babel.css';
+import '../styles/babel';
 
 
 const App = () => (

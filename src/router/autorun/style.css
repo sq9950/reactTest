@@ -14,9 +14,12 @@ h1{
 	line-height: 30px;
 	font-size: 24px;
 }
+.autorunCon{
 .btnCon{
-	text-align: center;
-	padding-top:20px;
+    text-align: center;
+    padding-top:20px;
+    background-color: yellow;
+  }
 }
 .btnCon button{
 	width:50px;

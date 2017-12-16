@@ -9,8 +9,8 @@ const moduleConfig = {
       loader: 'eslint-loader',
       enforce: 'pre',
       options: {
-        formatter: require('eslint-friendly-formatter')
-      }
+        formatter: require('eslint-friendly-formatter'),
+      },
     },
     {
       test: /\.(js|jsx)$/,
@@ -33,6 +33,17 @@ const moduleConfig = {
       use: [
         'style-loader',
         'css-loader',
+        {
+          loader: 'postcss-loader',
+          options: {
+            plugins: [
+              require('autoprefixer')({
+                browserslist: ['last 2 versions'],
+              })
+            ],
+          },
+        },
+        'less-loader',
       ],
     },
     {

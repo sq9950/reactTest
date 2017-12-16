@@ -3,7 +3,7 @@ import React, { Component } from 'react';
 
 import { inject, observer } from 'mobx-react';
 import needloadStore from './store';
-import './style.css';
+import './style';
 
 
 @inject('routing')

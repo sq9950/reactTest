@@ -8,12 +8,12 @@ const resolveConfig = {
     Components: path.resolve(__dirname, 'src/components/'),
     Actions: path.resolve(__dirname, 'src/actions/'),
     Util: path.resolve(__dirname, 'src/utils/'),
-    Reducers: path.resolve(__dirname, 'src/reducers/')
+    Reducers: path.resolve(__dirname, 'src/reducers/'),
   },
-  extensions: ['.js', '.jsx'],
-  modules: [path.resolve(__dirname, "src"), "node_modules"]
-}
+  extensions: ['.js', '.jsx', '.less', '.css'],
+  modules: [path.resolve(__dirname, 'src'), 'node_modules'],
+};
 
 module.exports = {
-  resolveConfig
-}
+  resolveConfig,
+};
