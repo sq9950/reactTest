@@ -1,2 +1,2 @@
-const Home = () => null;
-export default Home;
+const Frame = () => null;
+export default Frame;

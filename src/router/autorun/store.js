@@ -1,6 +1,6 @@
 import { observable, action } from 'mobx';
 
-const homeStore = observable({
+const AutorunStore = observable({
   count: 1,
   needCount: 1,
   add: action.bound(function fn() {
@@ -16,5 +16,5 @@ const homeStore = observable({
     this.needCount -= 1;
   }),
 });
-export default homeStore;
+export default AutorunStore;
 

@@ -1,28 +1,28 @@
 import React, { Component } from 'react';
 
 import { inject, observer } from 'mobx-react';
-import homeStore from './store';
+import btnaddStore from './store';
 import './style.css';
 
 
 @inject('routing')
 @inject('publicStore')
 @observer
-class Home extends Component {
+class BtnaddComponent extends Component {
   static add() {
-    homeStore.add();
+    btnaddStore.add();
   }
   static less() {
-    homeStore.less();
+    btnaddStore.less();
   }
   static syncAdd() {
-    homeStore.syncAdd();
+    btnaddStore.syncAdd();
   }
   static syncLess() {
-    homeStore.syncLess();
+    btnaddStore.syncLess();
   }
   static ajax() {
-    homeStore.ajax();
+    btnaddStore.ajax();
   }
 
   render() {
@@ -30,30 +30,30 @@ class Home extends Component {
       <div>
         <h1>demo1：加减</h1>
         <div className="con">
-          <span>{homeStore.count}</span>
+          <span>{btnaddStore.count}</span>
         </div>
         <div className="btnCon">
-          <button className="fz14" onClick={Home.add}>+</button>
-          <button className="ml10 fz14" onClick={Home.less}>-</button>
+          <button className="fz14" onClick={BtnaddComponent.add}>+</button>
+          <button className="ml10 fz14" onClick={BtnaddComponent.less}>-</button>
         </div>
         <h1>demo1：延时加减</h1>
         <div className="con">
-          <span>{homeStore.syncCount}</span>
+          <span>{btnaddStore.syncCount}</span>
         </div>
         <div className="btnCon">
-          <button className="fz14" onClick={Home.syncAdd}>+</button>
-          <button className="ml10 fz14" onClick={Home.syncLess}>-</button>
+          <button className="fz14" onClick={BtnaddComponent.syncAdd}>+</button>
+          <button className="ml10 fz14" onClick={BtnaddComponent.syncLess}>-</button>
         </div>
         <h1>demo1：fetch</h1>
         <div className="con">
-          <span>{homeStore.data && homeStore.data.errmsg}</span>
+          <span>{btnaddStore.data && btnaddStore.data.errmsg}</span>
         </div>
         <div className="btnCon">
-          <button className="fz14" onClick={Home.ajax}>+</button>
+          <button className="fz14" onClick={BtnaddComponent.ajax}>+</button>
         </div>
       </div>
     );
   }
 }
-// const _Home = connect(mapStateToProps)(Home);
-export default Home;
+// const _BtnaddComponent = connect(mapStateToProps)(BtnaddComponent);
+export default BtnaddComponent;

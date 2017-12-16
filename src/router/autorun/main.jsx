@@ -3,35 +3,35 @@ import React, { Component } from 'react';
 
 import { inject, observer } from 'mobx-react';
 import { autorun, computed } from 'mobx';
-import homeStore from './store';
+import AutorunStore from './store';
 import './style.css';
 
 @inject('routing')
 @inject('publicStore')
 @observer
-class Home extends Component {
+class AutorunComponent extends Component {
   static add() {
-    homeStore.add();
+    AutorunStore.add();
   }
   static less() {
-    homeStore.less();
+    AutorunStore.less();
   }
   static needAdd() {
-    homeStore.needAdd();
+    AutorunStore.needAdd();
   }
   static needLess() {
-    homeStore.needLess();
+    AutorunStore.needLess();
   }
   componentWillMount() {
     // 在这里做一些自定义操作
     autorun(() => {
       console.log('autorun');
-      console.log(homeStore.count);
+      console.log(AutorunStore.count);
     });
     // 在这里生成一些新值
     const upperCaseName = computed(() => {
       console.log('computed');
-      homeStore.sumCount = homeStore.count + homeStore.needCount;
+      AutorunStore.sumCount = AutorunStore.count + AutorunStore.needCount;
     });
     upperCaseName.observe();
     // const disposer = upperCaseName.observe();
@@ -41,25 +41,25 @@ class Home extends Component {
       <div>
         <h1>demo1：按需加载</h1>
         <div className="con">
-          <span>count：{homeStore.count}</span>
+          <span>count：{AutorunStore.count}</span>
         </div>
         <div className="btnCon">
-          <button className="fz14" onClick={Home.add}>+</button>
-          <button className="ml10 fz14" onClick={Home.less}>-</button>
+          <button className="fz14" onClick={AutorunComponent.add}>+</button>
+          <button className="ml10 fz14" onClick={AutorunComponent.less}>-</button>
         </div>
         <div className="con">
-          <span>needCount：{homeStore.needCount}</span>
+          <span>needCount：{AutorunStore.needCount}</span>
         </div>
         <div className="btnCon">
-          <button className="fz14" onClick={Home.needAdd}>+</button>
-          <button className="ml10 fz14" onClick={Home.needLess}>-</button>
+          <button className="fz14" onClick={AutorunComponent.needAdd}>+</button>
+          <button className="ml10 fz14" onClick={AutorunComponent.needLess}>-</button>
         </div>
         <div className="con">
-          <span>sumCount：{homeStore.sumCount}</span>
+          <span>sumCount：{AutorunStore.sumCount}</span>
         </div>
       </div>
     );
   }
 }
 // const _Home = connect(mapStateToProps)(Home);
-export default Home;
+export default AutorunComponent;

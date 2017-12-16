@@ -1,6 +1,6 @@
 import { observable, action } from 'mobx';
 
-const homeStore = observable({
+const testStore = observable({
   count: 1,
   add: action.bound(function fn() {
     this.count += 1;
@@ -9,5 +9,5 @@ const homeStore = observable({
     this.count -= 1;
   }),
 });
-export default homeStore;
+export default testStore;
 

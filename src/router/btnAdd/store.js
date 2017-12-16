@@ -1,6 +1,6 @@
 import { observable, action } from 'mobx';
 
-const homeStore = observable({
+const btnaddStore = observable({
   count: 1,
   syncCount: 1,
   data: {},
@@ -35,5 +35,5 @@ const homeStore = observable({
       });
   }),
 });
-export default homeStore;
+export default btnaddStore;
 
