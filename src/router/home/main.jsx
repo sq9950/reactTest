@@ -17,6 +17,12 @@ const Home = () => (
       <li>
         <Link href="/autorun" to="/autorun">3、autorun</Link>
       </li>
+      <li>
+        <Link href="/nestingRouter" to="/nestingRouter">4、嵌套路由</Link>
+      </li>
+      <li>
+        <Link href="/nestingRouter2" to="/nestingRouter2">5、嵌套路由2</Link>
+      </li>
     </ul>
   </div>
 );

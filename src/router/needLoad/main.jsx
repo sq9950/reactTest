@@ -7,12 +7,6 @@ import needloadStore from './store';
 import styles from './style.css';
 
 const NeedloadStoreComponent = class NeedloadStoreComponent extends Component {
-  // constructor(props) {
-  //   super(props);
-  //   this.state = {
-  //     data: 1,
-  //   };
-  // }
   static add() {
     needloadStore.add();
   }
