@@ -33,4 +33,10 @@ cp dist node_modules/jimu-mobile/
 ```
   npm run buildlib
 ```
+### 8、代码编译到dist后，可以快速启动一个静态服务器
+```
+  // 启动后，页面正常点击可以，但点击后路由跳转了，再点刷新，会有问题，这个待解
+  npm run staticServer
+```
+./node_modules/.bin/static-server dist
 # 请将dist.zip 解压 并替换 node_modules/jimu-mobile/dist 里面的所有文件

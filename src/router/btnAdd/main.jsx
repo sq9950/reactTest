@@ -20,7 +20,7 @@ const BtnaddComponent = class BtnaddComponent extends Component {
     btnaddStore.syncLess();
   }
   static ajax() {
-    btnaddStore.ajax();
+    // btnaddStore.ajax();
   }
 
   render() {
@@ -42,7 +42,7 @@ const BtnaddComponent = class BtnaddComponent extends Component {
           <button className="fz14" onClick={BtnaddComponent.syncAdd}>+</button>
           <button className="ml10 fz14" onClick={BtnaddComponent.syncLess}>-</button>
         </div>
-        <h1>demo1：fetch</h1>
+        <h1>demo1：fetch(请移步webapp观看)</h1>
         <div styleName="con">
           <span>{btnaddStore.data && btnaddStore.data.errmsg}</span>
         </div>

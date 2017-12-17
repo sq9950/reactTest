@@ -7,6 +7,7 @@ import createBrowserHistory from 'history/createBrowserHistory';
 
 import App from './router/index';
 import stores from './store';
+import './components/config.js';
 
 const browserHistory = createBrowserHistory();
 const history = syncHistoryWithStore(browserHistory, stores.routing);

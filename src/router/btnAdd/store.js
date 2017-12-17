@@ -24,7 +24,7 @@ const btnaddStore = observable({
   }),
   ajax: action.bound(function fn() {
     const self = this;
-    fetch('/v3/eWebApp')
+    fetch(`${window.GITHUB_URL}testfetch/1.json`)
       .then(response => response.json())
       .then((json) => {
         console.log('111', self);

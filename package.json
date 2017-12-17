@@ -4,7 +4,8 @@
   "description": "",
   "main": "webpack.config.js",
   "scripts": {
-    "start": "node ./config/devserver.js",
+    "start": "node ./config/devserver.js --env=dev",
+    "devonline": "node ./config/devserver.js --env=online",
     "staticServer": "./node_modules/.bin/static-server dist",
     "buildlib": "./node_modules/.bin/webpack -p --config config/webpack.config.dll.js",
     "build": "rm -rf dist log && npm run buildlib && ./node_modules/.bin/webpack --config config/webpack.config.prod.js --progress --colors --optimize-minimize",
@@ -54,6 +55,7 @@
     "mobx": "^3.3.2",
     "mobx-react": "^4.3.5",
     "mobx-react-router": "^4.0.1",
+    "optimist": "^0.6.1",
     "os": "^0.1.1",
     "postcss-loader": "^2.0.9",
     "react": "^16.2.0",
