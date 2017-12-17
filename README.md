@@ -4,6 +4,7 @@
 * 使用http-proxy-middleware 代理，解决前端跨域问题
 * 使用webpack.DllPlugin和webpack.DefinePlugin 来分离公共组件
 * 使用airbnb标准进行语法检查
+* 使用react-css-module管理css
 * 增加git钩子，git commit 时进行语法检查，语法检查不通过，commit将无法提交
 * 使用webpack-bundle-analyzer分析代码，代码大小看起来更直观
 # 开始运行
@@ -26,7 +27,7 @@ cp dist node_modules/jimu-mobile/
 ```
 ### 6、编译代码
 ```
-  npm run build 
+  npm run build
 ```
 ### 7、编译公共组件
 ```

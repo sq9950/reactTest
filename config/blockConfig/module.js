@@ -24,10 +24,13 @@ const moduleConfig = {
       ],
     },
     {
-      test: /\.css$/,
+      test: /\.(css|less|sass)$/,
       use: ExtractTextPlugin.extract({
-          fallback: 'style-loader',
-          use: 'css-loader?modules,localIdentName="[name]-[local]-[hash:base64:6]"'
+        fallback: 'style-loader',
+        use: [
+          'css-loader?modules,localIdentName="[name]-[local]-[hash:base64:6]"',
+          'less-loader',
+        ],
       }),
     },
     {
