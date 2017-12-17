@@ -21,7 +21,6 @@ module.exports = {
       'import/extensions': 0,
       'import/no-unresolved': 0,
       'import/no-webpack-loader-syntax': 0,
-      'react/no-array-index-key': 0,
       'import/no-extraneous-dependencies': 0
     }
 };
