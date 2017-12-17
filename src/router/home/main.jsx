@@ -23,6 +23,9 @@ const Home = () => (
       <li>
         <Link href="/nestingRouter2" to="/nestingRouter2">5、嵌套路由2</Link>
       </li>
+      <li>
+        <Link href="/cssModuleSwitch" to="/cssModuleSwitch">5、css module切换样式</Link>
+      </li>
     </ul>
   </div>
 );

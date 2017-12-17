@@ -1,0 +1,25 @@
+.divClass{
+  width:100px;
+  height:100px;
+  line-height: 100px;
+  text-align: center;
+}
+.red{
+  composes: divClass;
+  background-color: red;
+}
+.yellow{
+  composes: divClass;
+  background-color: yellow;
+}
+div,button{
+  display: block;
+  margin-left:auto;
+  margin-right: auto;
+}
+button{
+  background-color: #ccc;
+  height:40px;
+  line-height: 40px;
+  margin-top: 20px;
+}

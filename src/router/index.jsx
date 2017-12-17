@@ -12,6 +12,8 @@ import autorun from 'bundle-loader?lazy&name=autorun!./autorun/main';
 import nestingRouter from 'bundle-loader?lazy&name=nestingRouter!./nestingRouter/index';
 import nestingRouter2 from 'bundle-loader?lazy&name=nestingRouter2!./nestingRouter2/index';
 
+import cssModuleSwitch from 'bundle-loader?lazy&name=cssModuleSwitch!./cssModuleSwitch/main';
+
 import * as utils from '../utils/util';
 
 import '../styles/babel';
@@ -27,6 +29,8 @@ const App = () => (
       <Route path="/autorun" component={utils.syncBundle(autorun)} />
       <Route path="/nestingRouter" component={utils.syncBundle(nestingRouter)} />
       <Route path="/nestingRouter2" component={utils.syncBundle(nestingRouter2)} />
+      <Route path="/cssModuleSwitch" component={utils.syncBundle(cssModuleSwitch)} />
+
     </Switch>
   </div>
 );
