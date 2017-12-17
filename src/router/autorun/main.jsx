@@ -6,6 +6,7 @@ import CSSModules from 'react-css-modules';
 import { inject, observer } from 'mobx-react';
 import AutorunStore from './store';
 import styles from './style.css';
+// import babel2 from 'Style/babel2.css';
 
 const AutorunComponent = class AutorunComponent extends Component {
   static add() {
@@ -38,7 +39,7 @@ const AutorunComponent = class AutorunComponent extends Component {
     return (
       <div styleName="autorunCon">
         <h1>demo1：按需加载</h1>
-        <div styleName="con">
+        <div styleName="con pl10">
           <span>count：{AutorunStore.count}</span>
         </div>
         <div styleName="btnCon">
@@ -62,5 +63,6 @@ const AutorunComponent = class AutorunComponent extends Component {
 observer(AutorunComponent);
 inject('publicStore')(AutorunComponent);
 inject('routing')(AutorunComponent);
-
-export default CSSModules(AutorunComponent, styles);
+export default CSSModules(AutorunComponent, styles, {
+  allowMultiple: true,
+});

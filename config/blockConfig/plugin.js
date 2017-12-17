@@ -96,7 +96,7 @@ const dll_pluginConfig = [
 const prod_pluginConfig = [
   _LoaderOptionsPlugin,
   _HappyPack,
-  _BundleAnalyzerPlugin,
+  // _BundleAnalyzerPlugin,
 ];
 
 module.exports = {

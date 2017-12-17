@@ -34,7 +34,7 @@ const moduleConfig = {
       }),
     },
     {
-      test: /\.(png|jpg|gif|eot)$/,
+      test: /\.(png|jpg|gif)$/,
       include: [
         path.resolve(__dirname, 'styles'),
         path.resolve(__dirname, 'src/images'),
