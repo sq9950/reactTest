@@ -1,5 +1,6 @@
 var path = require('path')
 var webpack = require('webpack')
+var ExtractTextPlugin = require('extract-text-webpack-plugin');
 var HtmlWebpackPlugin = require("html-webpack-plugin");
 
 
@@ -19,6 +20,9 @@ module.exports = {
   resolve: config.resolveConfig,
   plugins: [
     ...config.dev_pluginConfig,
+    new ExtractTextPlugin('app.css', {
+        allChunks: true
+    }),
     new webpack.DefinePlugin({
       'process.env': {
         NODE_ENV: JSON.stringify('develop'), // react切换到produco版本

@@ -1,7 +1,7 @@
 import React from 'react';
 import { Route, Redirect, Switch } from 'react-router-dom';
 // import DialogLayout from 'jimu-mobile/dist/components/dialog/DialogLayout';
-import DialogLayout from 'Components';
+// import DialogLayout from 'Components';
 
 // import Frame from 'bundle-loader?lazy&name=main!./frame';
 import Home from 'bundle-loader?lazy&name=home!./home/main';
@@ -21,7 +21,7 @@ import '../styles/babel';
 
 const App = () => (
   <div className="content">
-    <DialogLayout />
+    {/* <DialogLayout /> */}
     {/* <Route path="/" component={utils.syncBundle(Frame)} /> */}
     <Switch>
       <Redirect exact from="/" to="/home" />

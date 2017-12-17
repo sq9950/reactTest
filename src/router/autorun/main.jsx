@@ -1,15 +1,13 @@
 import React, { Component } from 'react';
 // import { Link } from 'react-router-dom';
 
-import { inject, observer } from 'mobx-react';
 import { autorun, computed } from 'mobx';
+import CSSModules from 'react-css-modules';
+import { inject, observer } from 'mobx-react';
 import AutorunStore from './store';
-import './style';
+import styles from './style.css';
 
-@inject('routing')
-@inject('publicStore')
-@observer
-class AutorunComponent extends Component {
+const AutorunComponent = class AutorunComponent extends Component {
   static add() {
     AutorunStore.add();
   }
@@ -38,28 +36,31 @@ class AutorunComponent extends Component {
   }
   render() {
     return (
-      <div className="autorunCon">
+      <div styleName="autorunCon">
         <h1>demo1：按需加载</h1>
-        <div className="con">
+        <div styleName="con">
           <span>count：{AutorunStore.count}</span>
         </div>
-        <div className="btnCon">
+        <div styleName="btnCon">
           <button className="fz14" onClick={AutorunComponent.add}>+</button>
           <button className="ml10 fz14" onClick={AutorunComponent.less}>-</button>
         </div>
-        <div className="con">
+        <div styleName="con">
           <span>needCount：{AutorunStore.needCount}</span>
         </div>
-        <div className="btnCon">
+        <div styleName="btnCon">
           <button className="fz14" onClick={AutorunComponent.needAdd}>+</button>
           <button className="ml10 fz14" onClick={AutorunComponent.needLess}>-</button>
         </div>
-        <div className="con">
+        <div styleName="con">
           <span>sumCount：{AutorunStore.sumCount}</span>
         </div>
       </div>
     );
   }
-}
-// const _Home = connect(mapStateToProps)(Home);
-export default AutorunComponent;
+};
+observer(AutorunComponent);
+inject('publicStore')(AutorunComponent);
+inject('routing')(AutorunComponent);
+
+export default CSSModules(AutorunComponent, styles);

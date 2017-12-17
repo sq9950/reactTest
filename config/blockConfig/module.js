@@ -1,5 +1,5 @@
 const path = require('path');
-
+ExtractTextPlugin = require('extract-text-webpack-plugin');
 __dirname = path.resolve(__dirname, '../..');
 
 const moduleConfig = {
@@ -24,27 +24,11 @@ const moduleConfig = {
       ],
     },
     {
-      test: [/\.less$/, /\.css$/],
-      include: [
-        path.resolve(__dirname, 'src/styles'),
-        path.resolve(__dirname, 'src'),
-        path.resolve(__dirname, 'node_modules'),
-      ],
-      use: [
-        'style-loader',
-        'css-loader',
-        {
-          loader: 'postcss-loader',
-          options: {
-            plugins: [
-              require('autoprefixer')({
-                browserslist: ['last 2 versions'],
-              })
-            ],
-          },
-        },
-        'less-loader',
-      ],
+      test: /\.css$/,
+      use: ExtractTextPlugin.extract({
+          fallback: 'style-loader',
+          use: 'css-loader?modules,localIdentName="[name]-[local]-[hash:base64:6]"'
+      }),
     },
     {
       test: /\.(png|jpg|gif|eot)$/,
