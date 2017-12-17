@@ -29,7 +29,7 @@ const cssModuleSwitch = class cssModuleSwitch extends Component {
     return (
       <div>
         <div styleName={this.state.divClass}>变换的div</div>
-        <button onClick={this.btnClick}>变换颜色</button>
+        <button styleName="button" onClick={this.btnClick}>变换颜色</button>
       </div>
     );
   }

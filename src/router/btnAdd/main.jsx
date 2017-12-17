@@ -31,23 +31,23 @@ const BtnaddComponent = class BtnaddComponent extends Component {
           <span>{btnaddStore.count}</span>
         </div>
         <div styleName="btnCon">
-          <button className="fz14" onClick={BtnaddComponent.add}>+</button>
-          <button className="ml10 fz14" onClick={BtnaddComponent.less}>-</button>
+          <button className="fz14" styleName="button" onClick={BtnaddComponent.add}>+</button>
+          <button className="ml10 fz14" styleName="button" onClick={BtnaddComponent.less}>-</button>
         </div>
         <h1>demo1：延时加减</h1>
         <div styleName="con">
           <span>{btnaddStore.syncCount}</span>
         </div>
         <div styleName="btnCon">
-          <button className="fz14" onClick={BtnaddComponent.syncAdd}>+</button>
-          <button className="ml10 fz14" onClick={BtnaddComponent.syncLess}>-</button>
+          <button className="fz14" styleName="button" onClick={BtnaddComponent.syncAdd}>+</button>
+          <button className="ml10 fz14" styleName="button" onClick={BtnaddComponent.syncLess}>-</button>
         </div>
         <h1>demo1：fetch(请移步webapp观看)</h1>
         <div styleName="con">
           <span>{btnaddStore.data && btnaddStore.data.errmsg}</span>
         </div>
         <div styleName="btnCon">
-          <button className="fz14" onClick={BtnaddComponent.ajax}>+</button>
+          <button styleName="button" className="fz14" onClick={BtnaddComponent.ajax}>+</button>
         </div>
       </div>
     );
