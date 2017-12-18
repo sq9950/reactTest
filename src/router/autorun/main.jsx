@@ -6,7 +6,6 @@ import CSSModules from 'react-css-modules';
 import { inject, observer } from 'mobx-react';
 import AutorunStore from './store';
 import styles from './style.css';
-// import babel2 from 'Style/babel2.css';
 
 const AutorunComponent = class AutorunComponent extends Component {
   static add() {
