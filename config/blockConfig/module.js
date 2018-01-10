@@ -6,14 +6,6 @@ const moduleConfig = {
   rules: [
     {
       test: /\.(js|jsx)$/,
-      loader: 'eslint-loader',
-      enforce: 'pre',
-      options: {
-        formatter: require('eslint-friendly-formatter'),
-      },
-    },
-    {
-      test: /\.(js|jsx)$/,
       include: [
         path.resolve(__dirname, 'src'),
       ],

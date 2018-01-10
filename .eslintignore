@@ -1,6 +1,0 @@
-src/*.html
-src/**/*.css
-src/**/*.less
-src/styles/fonts/*
-src/images/**
-src/**/*.json

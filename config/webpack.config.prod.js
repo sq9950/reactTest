@@ -11,10 +11,10 @@ module.exports = {
   cache: true, //开启缓存模式
   entry: './src/index.jsx',
   output: {
-    path: path.resolve(__dirname, "../dist"), // string
+    path: path.resolve(__dirname, "../dist/dist"), // string
     filename: '[name].[hash].js',
     chunkFilename: '[name].[chunkhash:5].chunk.js',
-    publicPath: '/'
+    publicPath: '/dist/'
   },
   module: config.moduleConfig,
   resolve: config.resolveConfig,
@@ -31,7 +31,7 @@ module.exports = {
     new HtmlWebpackPlugin({
       title: '主页',
       template: './src/index.html',
-      filename: 'index.html',
+      filename: '../index.html',
       // bundleName: bundleConfig.vendor.js, //追加默认dll
       inject: 'body'
     }),
