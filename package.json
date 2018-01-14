@@ -8,7 +8,7 @@
     "devonline": "node ./config/devserver.js --env=online",
     "staticServer": "./node_modules/.bin/static-server dist",
     "buildlib": "./node_modules/.bin/webpack -p --config config/webpack.config.dll.js",
-    "build": "rm -rf dist log && npm run buildlib && ./node_modules/.bin/webpack --config config/webpack.config.prod.js --progress --colors --optimize-minimize",
+    "build": "rm -rf dist log && ./node_modules/.bin/webpack --config config/webpack.config.prod.js --progress --colors --optimize-minimize && cp src/pwa/* dist/dist",
     "lint": "./node_modules/.bin/eslint 'src/**'"
   },
   "author": "",
@@ -68,6 +68,7 @@
     "redux-actions": "^2.2.1",
     "static-server": "^3.0.0",
     "style-loader": "^0.18.2",
+    "sw-precache-webpack-plugin": "^0.11.4",
     "url-loader": "^0.5.9",
     "webpack": "^3.8.1",
     "webpack-bundle-analyzer": "^2.9.1",

@@ -12,10 +12,12 @@ import './components/config.js';
 const browserHistory = createBrowserHistory();
 const history = syncHistoryWithStore(browserHistory, stores.routing);
 
+history.bbb = 'sssss2222wwwwasdfa';
+
 ReactDOM.render(
   <Provider {...stores}>
     <Router history={history}>
-      <Route path="/" component={App} />
+      <Route path="/demo/" component={App} />
     </Router>
   </Provider>,
   document.getElementById('root'),

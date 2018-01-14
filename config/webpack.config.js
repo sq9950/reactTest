@@ -3,6 +3,7 @@ var webpack = require('webpack')
 var ExtractTextPlugin = require('extract-text-webpack-plugin');
 var HtmlWebpackPlugin = require("html-webpack-plugin");
 
+var SWPrecacheWebpackPlugin = require('sw-precache-webpack-plugin');
 
 var config = require("./blockConfig");
 
@@ -20,6 +21,14 @@ module.exports = {
   resolve: config.resolveConfig,
   plugins: [
     ...config.dev_pluginConfig,
+    new SWPrecacheWebpackPlugin({
+      cacheId: 'v1',
+      dontCacheBustUrlsMatching: /\.\w{8}\./,
+      filename: 'service-worker.js',
+      minify: true,
+      navigateFallback: './example/index.html',
+      staticFileGlobsIgnorePatterns: [/\.map$/, /asset-manifest\.json$/],
+    }),
     new ExtractTextPlugin('app.css', {
         allChunks: true
     }),

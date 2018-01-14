@@ -2,5 +2,7 @@ src/*.html
 src/**/*.css
 src/**/*.less
 src/styles/fonts/*
-src/images/**
+src/**/*.png
+src/**/*.jpg
+src/**/*.gif
 src/**/*.json

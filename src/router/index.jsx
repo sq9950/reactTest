@@ -22,14 +22,14 @@ const App = () => (
   <div className="content">
     {/* <DialogLayout /> */}
     <Switch>
-      <Redirect exact from="/" to="/home" />
-      <Route path="/home" component={utils.syncBundle(Home)} />
-      <Route path="/btnAdd" component={utils.syncBundle(btnAdd)} />
-      <Route path="/needLoad" component={utils.syncBundle(needLoad)} />
-      <Route path="/autorun" component={utils.syncBundle(autorun)} />
-      <Route path="/nestingRouter" component={utils.syncBundle(nestingRouter)} />
-      <Route path="/nestingRouter2" component={utils.syncBundle(nestingRouter2)} />
-      <Route path="/cssModuleSwitch" component={utils.syncBundle(cssModuleSwitch)} />
+      <Redirect exact from="/demo/" to="/demo/home" />
+      <Route path="/demo/home" component={utils.syncBundle(Home)} />
+      <Route path="/demo/btnAdd" component={utils.syncBundle(btnAdd)} />
+      <Route path="/demo/needLoad" component={utils.syncBundle(needLoad)} />
+      <Route path="/demo/autorun" component={utils.syncBundle(autorun)} />
+      <Route path="/demo/nestingRouter" component={utils.syncBundle(nestingRouter)} />
+      <Route path="/demo/nestingRouter2" component={utils.syncBundle(nestingRouter2)} />
+      <Route path="/demo/cssModuleSwitch" component={utils.syncBundle(cssModuleSwitch)} />
 
     </Switch>
   </div>
