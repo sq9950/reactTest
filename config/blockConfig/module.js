@@ -25,10 +25,26 @@ const moduleConfig = {
     },
     {
       test: /\.(css|less|sass)$/,
+      exclude: [
+        path.resolve(__dirname, 'node_modules'),
+      ],
       use: ExtractTextPlugin.extract({
         fallback: 'style-loader',
         use: [
-          'css-loader?modules,localIdentName="[name]-[local]-[hash:base64:6]"',
+          'css-loader?modules',
+          'less-loader',
+        ],
+      }),
+    },
+    {
+      test: /\.(css|less|sass)$/,
+      include: [
+        path.resolve(__dirname, 'node_modules'),
+      ],
+      use: ExtractTextPlugin.extract({
+        fallback: 'style-loader',
+        use: [
+          'css-loader',
           'less-loader',
         ],
       }),
@@ -41,7 +57,7 @@ const moduleConfig = {
         path.resolve(__dirname, 'node_modules'),
       ],
       exclude: [
-        // path.resolve(__dirname, 'src')
+        path.resolve(__dirname, 'src')
       ],
       use: [{
         loader: 'url-loader',
