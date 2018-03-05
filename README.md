@@ -16,11 +16,6 @@ git clone https://github.com/sq9950/reactTest.git
 ```
 cd reactTest && npm i
 ```
-### 3、手动解压dist.zip
-### 4、覆盖node_modules jimu-mobile 里的dist
-```
-cp dist node_modules/jimu-mobile/
-```
 ### 5、启动服务
 ```
   npm start
