@@ -49,7 +49,7 @@
     "html-webpack-plugin": "^2.30.1",
     "http-proxy-middleware": "^0.17.4",
     "isomorphic-fetch": "^2.2.1",
-    "jimu-mobile": "^1.12.1",
+    "jimu-mobile": "^1.14.1-1",
     "less": "^2.7.3",
     "less-loader": "^4.0.5",
     "mobx": "^3.3.2",
