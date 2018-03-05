@@ -8,6 +8,7 @@
 * 增加git钩子，git commit 时进行语法检查，语法检查不通过，commit将无法提交
 * 使用webpack-bundle-analyzer分析代码，代码大小看起来更直观
 # 开始运行
+
 ### 1、克隆代码
 ```
 git clone https://github.com/sq9950/reactTest.git
