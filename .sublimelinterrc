@@ -2,10 +2,10 @@
     "linters": {
         "eslint": {
             "excludes": [
-                "**/es-webapp/config/*",
-                "**/es-webapp/config/**",
-                "**/es-webapp/dist/*",
-                "**/es-webapp/resources/*"
+                "**/reactTest/config/*",
+                "**/reactTest/config/**",
+                "**/reactTest/dist/*",
+                "**/reactTest/resources/*"
             ]
         }
     }
