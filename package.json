@@ -57,7 +57,7 @@
     "mobx-react-router": "^4.0.1",
     "optimist": "^0.6.1",
     "os": "^0.1.1",
-    "postcss-loader": "^2.0.9",
+    "postcss-loader": "^2.1.1",
     "react": "^16.2.0",
     "react-css-modules": "^4.7.1",
     "react-dom": "^16.2.0",

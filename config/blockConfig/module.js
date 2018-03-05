@@ -25,6 +25,9 @@ const moduleConfig = {
     },
     {
       test: /\.(css|less|sass)$/,
+      include: [
+        path.resolve(__dirname, 'src'),
+      ],
       use: ExtractTextPlugin.extract({
         fallback: 'style-loader',
         use: [
@@ -32,6 +35,17 @@ const moduleConfig = {
           'less-loader',
         ],
       }),
+    },
+    {
+      test: /\.css$/,
+      include: [
+        path.resolve(__dirname, 'node_modules'),
+      ],
+      use: [
+        'style-loader',
+        'css-loader',
+        'less-loader',
+      ],
     },
     {
       test: /\.(png|jpg|gif)$/,
@@ -51,16 +65,16 @@ const moduleConfig = {
       }],
     },
     {
-      test: /\.woff(\?.*)?$/,
-      loader: 'url-loader?prefix=fonts/&name=fonts/[name]-[hash:8].[ext]&limit=10000&mimetype=application/font-woff',
-    },
-    {
-      test: /\.ttf(\?.*)?$/,
-      loader: 'url-loader?prefix=fonts/&name=fonts/[name]-[hash:8].[ext]&limit=10000&mimetype=application/octet-stream',
-    },
-    {
-      test: /\.svg(\?.*)?$/,
-      loader: 'url-loader?prefix=fonts/&name=fonts/[name]-[hash:8].[ext]&limit=10000&mimetype=image/svg+xml',
+      test: /\.(woff|ttf|eot|svg)(\?.*)?$/,
+      include: [
+        path.resolve(__dirname, 'node_modules'),
+      ],
+      use: [{
+        loader: 'url-loader',
+        options: {
+          limit: 300000,
+        },
+      }],
     },
   ],
   // rules: [
