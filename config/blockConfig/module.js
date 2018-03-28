@@ -5,6 +5,15 @@ __dirname = path.resolve(__dirname, '../..');
 const moduleConfig = {
   rules: [
     {
+      test: /\.tsx?$/,
+      loader: "awesome-typescript-loader"
+    },
+    {
+      enforce: "pre",
+      test: /\.js$/,
+      loader: "source-map-loader"
+    },
+    {
       test: /\.(js|jsx)$/,
       loader: 'eslint-loader',
       enforce: 'pre',
