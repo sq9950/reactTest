@@ -1,40 +1,36 @@
 const path = require('path');
-ExtractTextPlugin = require('extract-text-webpack-plugin');
-__dirname = path.resolve(__dirname, '../..');
+const ExtractTextPlugin = require('extract-text-webpack-plugin');
 
+__dirname = path.resolve(__dirname, '../..');
+console.log('ExtractTextPlugin.extract',ExtractTextPlugin.extract)
 const moduleConfig = {
   rules: [
-    {
-      test: /\.(js|jsx)$/,
-      loader: 'eslint-loader',
-      enforce: 'pre',
-      options: {
-        formatter: require('eslint-friendly-formatter'),
-      },
-    },
+    // {
+    //   test: /\.(js|jsx)$/,
+    //   loader: 'eslint-loader',
+    //   enforce: 'pre',
+    //   options: {
+    //     formatter: require('eslint-friendly-formatter'),
+    //   },
+    // },
     {
       test: /\.(js|jsx)$/,
       include: [
         path.resolve(__dirname, 'src'),
+        path.resolve(__dirname, 'node_modules/jimu-mobile/dist/styles/jimu.min.css'),
       ],
-      use: [
-        {
-          loader: 'babel-loader',
-        },
-      ],
+      use: 'babel-loader'
     },
     {
       test: /\.(css|less|sass)$/,
       include: [
         path.resolve(__dirname, 'src'),
       ],
-      use: ExtractTextPlugin.extract({
-        fallback: 'style-loader',
-        use: [
-          'css-loader?modules,localIdentName="[name]-[local]-[hash:base64:6]"',
-          'less-loader',
-        ],
-      }),
+      use: [
+        'style-loader',
+        'css-loader?modules,localIdentName="[name]-[local]-[hash:base64:6]"',
+        'less-loader',
+      ],
     },
     {
       test: /\.css$/,

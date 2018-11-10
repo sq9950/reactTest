@@ -63,11 +63,11 @@ const _UglifyJsParallelPlugin = new UglifyJsParallelPlugin({
   comments: false,
 });
 // 并行构建
-const _HappyPack = new HappyPack({
-  loaders: ['babel-loader'],
-  cache: true,
-  threads: os.cpus().length,
-});
+// const _HappyPack = new HappyPack({
+//   loaders: ['babel-loader'],
+//   cache: true,
+//   threads: os.cpus().length,
+// });
 // dll 生成
 const _DllPlugin = new webpack.DllPlugin({
   path: path.join(__dirname, 'log', '[name]-manifest.json'),
@@ -88,14 +88,14 @@ const dev_pluginConfig = [
 const dll_pluginConfig = [
   _LoaderOptionsPlugin,
   _UglifyJsParallelPlugin,
-  _HappyPack,
+  // _HappyPack,
   _DllPlugin,
   _AssetsPlugin,
 ];
 
 const prod_pluginConfig = [
   _LoaderOptionsPlugin,
-  _HappyPack,
+  // _HappyPack,
   // _BundleAnalyzerPlugin,
 ];
 

@@ -5,7 +5,10 @@ import { syncHistoryWithStore } from 'mobx-react-router';
 import { Router, Route } from 'react-router-dom';
 import createBrowserHistory from 'history/createBrowserHistory';
 
+// import 'jimu-mobile/dist/styles/jimu.min.css';
+
 import App from './router/index';
+console.log('App',App);
 import stores from './store';
 import './components/config.js';
 

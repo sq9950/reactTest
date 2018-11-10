@@ -5,7 +5,7 @@ const HtmlWebpackPlugin = require('html-webpack-plugin');
 
 
 const config = require('./blockConfig');
-console.log('__dirname',__dirname);
+
 module.exports = {
   entry: './src/index.jsx',
   output: {
@@ -15,14 +15,15 @@ module.exports = {
     publicPath: '/',
   },
   module: config.moduleConfig,
+  devtool: 'cheap-source-map',
+  devServer: config.devServerConfig,
   resolve: config.resolveConfig,
-  mode: 'development',
   plugins: [
-    ...config.dev_pluginConfig,
+
     new HtmlWebpackPlugin({
       title: '主页——dev',
       template: './src/index.html',
+      filename: 'index.html',
     }),
   ],
-
 };

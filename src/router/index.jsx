@@ -1,7 +1,7 @@
 import React from 'react';
 import { Route, Redirect, Switch } from 'react-router-dom';
-// import DialogLayout from 'jimu-mobile/dist/components/dialog/DialogLayout';
-import DialogLayout from 'Components';
+import DialogLayout from 'jimu-mobile/dist/components/dialog/DialogLayout';
+// import DialogLayout from 'Components';
 
 import Home from 'bundle-loader?lazy&name=home!./home/main';
 import btnAdd from 'bundle-loader?lazy&name=btnAdd!./btnAdd/main';
