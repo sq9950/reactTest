@@ -1,20 +1,18 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import { Provider } from 'react-redux';
-import { Router, Route } from 'react-router-dom';
+import { ConnectedRouter } from 'connected-react-router';
+import { Route } from 'react-router-dom';
 
 import App from './router/index';
-import stores from './store/createStore';
-import './components/config.js';
-
-// const browserHistory = createBrowserHistory();
-// const history = syncHistoryWithStore(browserHistory, stores.routing);
-
+import store, { history } from './store';
+console.log('---store',store);
+console.log('---history',history);
 ReactDOM.render(
-  <Provider store={stores}>
-    <Router history={history}>
-      <Route path="/" component={App} />
-    </Router>
+  <Provider store={store}>
+    <ConnectedRouter history={history}>
+      <div>asdfads</div>
+    </ConnectedRouter>
   </Provider>,
   document.getElementById('root'),
 );
